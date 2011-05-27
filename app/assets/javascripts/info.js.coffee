@@ -1,10 +1,13 @@
 $(document).ready ->
-  $("#notification").desktopify({
-    remove: false
-    callback: ->
-    unsupported: ->
-      alert("unsupported")
-  }).trigger("click")
+  $("#activate").live("click", ->
+    window.webkitNotifications.requestPermission()
+  )
 
+  $("#confirm").live("click", ->
+    alert(window.webkitNotifications.checkPermission())
+  )
 
-  window.webkitNotifications.createNotification("mail.png", "hoge", "Moge").show()
+  $("#notification").live("click", ->
+    window.webkitNotifications.createNotification("mail.png", "pochi", "bowbow!").show()
+  )
+
