@@ -1,4 +1,6 @@
 Notification::Application.routes.draw do
+  get "info/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
